@@ -45,4 +45,13 @@ public class EmployeeDeo {
 		
 	}
 
+######################################################################  update data ion database ################################################################
+
+	@Transactional
+	public String updateData(Entity entity) {
+		this.hibernateTemplate.update(entity);
+		return "data update successFully!!";
+	}
+
+
 }
