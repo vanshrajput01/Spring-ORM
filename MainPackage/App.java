@@ -64,7 +64,19 @@ public class App
 		System.out.println(employeeDeo.deleteData(entity));
 
 	}
-	    
+
+		ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+###########################################################################  get data from data by id   ######################################################
+		EmployeeDeo employeeDeo = context.getBean("employeeDeo", EmployeeDeo.class);
+		String data = employeeDeo.getSingleRecord(3);
+		System.out.print(data);
+
+
+
+#####################################################    get all data in table   #######################################################################
+		HashMap<Integer, List<String>> Alldata = employeeDeo.getMultipleRecord();
+		System.out.print(Alldata);
+		
 
 
         
