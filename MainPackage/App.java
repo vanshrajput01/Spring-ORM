@@ -50,8 +50,21 @@ public class App
 		Entity entity = employeeDeo.getHibernateTemplate().get(Entity.class, 2);
 		entity.setEmpName("employee04");
 		entity.setEmpSalary(12050);
-		// here you save data
+		// here you update data
 		System.out.println(employeeDeo.updateData(entity));
+
+	    ######################################################################  delete data in database ################################################################
+		ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+		EmployeeDeo employeeDeo = context.getBean("employeeDeo", EmployeeDeo.class);
+		// create object of Entity class
+		// to delete data in table you have two step first get data and update it.
+		// here you get data form database
+		Entity entity = employeeDeo.getHibernateTemplate().get(Entity.class, 2);
+		// here you delete data
+		System.out.println(employeeDeo.deleteData(entity));
+
+	}
+	    
 
 
         
