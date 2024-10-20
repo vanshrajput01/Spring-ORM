@@ -19,6 +19,7 @@ public class EmployeeDeo {
 	}
 
 	private HibernateTemplate hibernateTemplate;
+	
  #################################################  create method to save object in database ##################################################################
   
 	@Transactional
