@@ -39,6 +39,19 @@ public class App
 //                                     save multiple object
         System.out.println(employeeDeo.insertMultipleData(entitiesList) + "These ids data add in database..");
 
+
+        ############################################################## how to update data in database #####################################################
+
+    @Transactional
+	public String updateData(Entity entity) {
+		
+		// to update data
+		this.hibernateTemplate.update(entity);
+		
+		return "data update successFully!!";
+	}
+
+
         
 
         
