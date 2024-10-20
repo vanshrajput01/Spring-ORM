@@ -5,4 +5,7 @@ if you can use srping ORM
  . spring context
  . spring orm
  . sql connector
- . hibernate
+ . hibernate-core
+
+3. config.xml file
+. add spring core DTD.
