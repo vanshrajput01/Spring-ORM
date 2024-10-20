@@ -28,6 +28,10 @@ public class EmployeeDeo {
 		return "Data save successFully!!";
 
 	}
+
+##################################################### create method to save multiple object at one time in database #######################################
+
+
 	
 	@Transactional
 	public List<Integer> insertMultipleData(List<Entity> entities) {
