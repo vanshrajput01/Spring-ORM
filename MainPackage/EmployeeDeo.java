@@ -45,12 +45,49 @@ public class EmployeeDeo {
 		
 	}
 
-######################################################################  update data ion database ################################################################
+######################################################################  update data in database ################################################################
 
 	@Transactional
 	public String updateData(Entity entity) {
 		this.hibernateTemplate.update(entity);
 		return "data update successFully!!";
+	}
+
+######################################################################  delete data in database ################################################################
+	@Transactional
+	public String deleteData(Entity entity) {
+		
+		// to update data
+		this.hibernateTemplate.delete(entity);
+		
+		return "data delete successFully!!";
+	}
+	
+	######################################################################  get Single data ion database ################################################################
+
+	public String getSingleRecord(Integer id) {
+		
+		
+		Entity entity = this.hibernateTemplate.get(Entity.class, id);
+		
+		return entity.getEmpName() + " " + entity.getEmpSalary();
+	}
+
+	######################################################################  get all data in database ################################################################
+
+	public HashMap<Integer, List<String>> getMultipleRecord(Integer id) {
+	
+			HashMap<Integer, List<String>> tableadata = new HashMap<>();
+		List<Entity> entitiesList = this.hibernateTemplate.loadAll(Entity.class);
+		entitiesList.forEach(e->{
+			List<String> StringList = new ArrayList<>();
+			StringList.add(e.getEmpName());
+			StringList.add(e.getEmpSalary().toString());
+			tableadata.put(e.getEmpId(),StringList);
+			
+		});
+		
+		return tableadata;
 	}
 
 
