@@ -42,14 +42,16 @@ public class App
 
         ############################################################## how to update data in database #####################################################
 
-    @Transactional
-	public String updateData(Entity entity) {
-		
-		// to update data
-		this.hibernateTemplate.update(entity);
-		
-		return "data update successFully!!";
-	}
+		ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+		EmployeeDeo employeeDeo = context.getBean("employeeDeo", EmployeeDeo.class);
+		// create object of Entity class
+		// to update data in table you have two step first get data and update it.
+		// here you data form database
+		Entity entity = employeeDeo.getHibernateTemplate().get(Entity.class, 2);
+		entity.setEmpName("employee04");
+		entity.setEmpSalary(12050);
+		// here you save data
+		System.out.println(employeeDeo.updateData(entity));
 
 
         
