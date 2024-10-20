@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 public class EmployeeDeo {
 
-
 	public HibernateTemplate getHibernateTemplate() {
 		return hibernateTemplate;
 	}
