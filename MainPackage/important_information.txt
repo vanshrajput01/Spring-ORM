@@ -1,0 +1,8 @@
+if you can use srping ORM
+ 1. create maven project 
+ 2. add these five dependencies
+ . spring core
+ . spring context
+ . spring orm
+ . sql connector
+ . hibernate
